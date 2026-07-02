@@ -2,7 +2,7 @@
 chcp 65001 >nul
 title Синхронизация модов
 
-set "REPO_URL=YOUR_REPOSITORY_URL"
+set "REPO_URL=https://github.com/ifdancoder/neoforge-1.21.1-modpack"
 
 echo Поиск Git...
 where git >nul 2>nul
