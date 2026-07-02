@@ -1,0 +1,14 @@
+==== Connector Mixin Patch Audit Summary ====
+Successful: 1
+Partial: 0
+Failed: 0
+Success rate: 100,00%        Accuracy: 100,00%
+=============================================
+
+Mixin method com/terraformersmc/terraform/boat/impl/mixin/MixinBoatEntityRenderer terraformWood$getBoatTextureAndModel(Ljava/util/Map;Ljava/lang/Object;Lcom/llamalad7/mixinextras/injector/wrapoperation/Operation;Lnet/minecraft/world/entity/vehicle/Boat;)Ljava/lang/Object;
+  >> Using org.sinytra.adapter.patch.resolver.target.SplitTargetMethodSubResolver
+     - Adjusting split method target to getModelWithLocation(Lnet/minecraft/world/entity/vehicle/Boat;)Lcom/mojang/datafixers/util/Pair;
+  >> Using org.sinytra.adapter.patch.processor.PropertyProcessor
+     - Set property 'at' to: AtData{value=INVOKE, target=Ljava/util/Map;get(Ljava/lang/Object;)Ljava/lang/Object;}
+     - Set property 'method' to: MethodQualifier[owner=null, name=getModelWithLocation, desc=(Lnet/minecraft/world/entity/vehicle/Boat;)Lcom/mojang/datafixers/util/Pair;]
+
