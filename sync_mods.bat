@@ -16,27 +16,26 @@ if errorlevel 1 (
 echo Проверяем репозиторий...
 if not exist ".git" (
     echo Папка не является Git-репозиторием.
-    echo Инициализируем репозиторий...
+    echo Выполняем первоначальную синхронизацию...
 
-    git init
+    git clone %REPO_URL% temp_repo
     if errorlevel 1 (
-        echo Ошибка инициализации репозитория.
+        echo Ошибка клонирования репозитория.
         pause
         exit /b
     )
 
-    git remote add origin %REPO_URL%
-    git fetch --depth 1 origin
+    xcopy "temp_repo\*" "." /E /H /Y >nul
     if errorlevel 1 (
-        echo Ошибка получения данных из репозитория.
+        echo Ошибка копирования файлов.
+        rmdir /S /Q temp_repo
         pause
         exit /b
     )
 
-    git checkout -b main origin/main
-    if errorlevel 1 (
-        git checkout -b master origin/master
-    )
+    xcopy "temp_repo\.git" ".git" /E /H /I /Y >nul
+
+    rmdir /S /Q temp_repo
 
     echo Репозиторий успешно инициализирован.
     pause
